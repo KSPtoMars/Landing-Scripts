@@ -8,13 +8,15 @@
 DECLARE PARAMETER slope2_scanPos.
 
 //Determines how big the scanned area is in degrees lat/lng
+//Placeholder value pretty much
+//Is it worth it to be able to input this as an argument?
 SET slope2_scanSize TO 0.0005.
 
 //Offsets the four corners of the square that is scanned
 SET slope2_north TO LATLNG(slope2_scanPos:LAT+slope2_scanSize, slope2_scanPos:LNG).
 SET slope2_east  TO LATLNG(slope2_scanPos:LAT, slope2_scanPos:LNG+slope2_scanSize).
-SET slope2_south TO LATLNG(slope2_scanPos:LAT, slope2_scanPos:LNG-slope2_scanSize).
-SET slope2_west TO LATLNG(slope2_scanPos:LAT-slope2_scanSize, slope2_scanPos:LNG).
+SET slope2_west TO LATLNG(slope2_scanPos:LAT, slope2_scanPos:LNG-slope2_scanSize).
+SET slope2_south TO LATLNG(slope2_scanPos:LAT-slope2_scanSize, slope2_scanPos:LNG).
 
 //Determines which of the corners of the square is the highest/lowest
 SET slope2_highestPoint TO slope2_north.
